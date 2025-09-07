@@ -4,33 +4,32 @@
 <meta charset="UTF-8">
 <title>Amazon Product Search</title>
 <style>
-    body { font-family: Arial, sans-serif; background: #f7f7f7; padding: 20px; margin: 0; }
-    h1 { text-align: center; color: #ff9900; margin-bottom: 20px; }
-    #searchForm { text-align: center; margin-bottom: 20px; }
-    input[type="text"] { width: 300px; padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; }
-    input[type="submit"] { padding: 10px 15px; font-size: 16px; background: #ff9900; border: none; color: white; cursor: pointer; border-radius: 5px; margin-left: 5px; }
-    input[type="submit"]:hover { background: #e68a00; }
-    iframe { width: 100%; height: 700px; border: none; border-radius: 5px; }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        padding: 20px;
+        margin: 0;
+    }
+    h1 {
+        text-align: center;
+        color: #ff9900;
+        margin-bottom: 20px;
+    }
+    /* Center search box and results */
+    .gcse-searchbox, .gcse-searchresults {
+        max-width: 800px;
+        margin: 0 auto 20px auto;
+    }
 </style>
+<!-- Load Google CSE script with your ID -->
+<script async src="https://cse.google.com/cse.js?cx=f2fefe9fbe05341fe"></script>
 </head>
 <body>
+
 <h1>Amazon Product Search</h1>
 
-<div id="searchForm">
-    <input type="text" id="query" placeholder="Search Amazon products...">
-    <input type="submit" value="Search" onclick="searchAmazon()">
-</div>
+<!-- Google Custom Search box and results -->
+<div class="gcse-search"></div>
 
-<iframe id="resultsFrame"></iframe>
-
-<script>
-function searchAmazon() {
-    const query = encodeURIComponent(document.getElementById('query').value.trim());
-    if (!query) return;
-    // Google search restricted to Amazon product pages
-    const url = `https://www.google.com/search?q=site:amazon.com+inurl:/dp/+${query}+-sponsored+-ad&num=20`;
-    document.getElementById('resultsFrame').src = url;
-}
-</script>
 </body>
 </html>
