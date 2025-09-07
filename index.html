@@ -4,17 +4,97 @@
     <meta charset="UTF-8">
     <title>Amazon Product Search</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #f7f7f7; }
-        h1 { color: #ff9900; }
-        #search-box { width: 100%; max-width: 600px; padding: 10px; font-size: 16px; }
-        #results { margin-top: 20px; }
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff9900; /* Amazon orange */
+            text-align: center;
+        }
+
+        /* Center search box and results */
+        .gcse-searchbox-only, .gcse-searchresults-only {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        /* Search input styling */
+        input.gsc-input {
+            width: 100% !important;
+            max-width: 600px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Search button styling */
+        input.gsc-search-button {
+            background-color: #ff9900;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input.gsc-search-button:hover {
+            background-color: #e68a00;
+        }
+
+        /* Search results styling */
+        .gsc-result {
+            background: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .gsc-thumbnail-inside img {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .gsc-url-top, .gs-title {
+            font-size: 16px;
+            color: #007185; /* Amazon link color */
+            text-decoration: none;
+        }
+
+        .gsc-url-top {
+            font-size: 14px;
+            color: #565959;
+        }
+
+        /* Optional: flex container for image + text */
+        .gsc-wrapper {
+            display: flex;
+            align-items: center;
+        }
     </style>
-    <!-- Load Google CSE script -->
+
+    <!-- Google CSE script -->
     <script async src="https://cse.google.com/cse.js?cx=f2fefe9fbe05341fe"></script>
 </head>
 <body>
     <h1>Amazon Product Search</h1>
+
+    <!-- Search box -->
     <div class="gcse-searchbox-only"></div>
+
+    <!-- Search results -->
     <div id="results" class="gcse-searchresults-only"></div>
 </body>
 </html>
