@@ -35,8 +35,11 @@
     .gsc-webResult.gsc-result {
         display: flex !important;
         align-items: center !important;
-        padding: 15px 0 !important;
+        padding: 15px !important;
         border-bottom: 1px solid #ddd;
+        background: #fff;
+        border-radius: 8px;
+        margin-bottom: 10px;
     }
 
     .gsc-thumbnail-inside {
@@ -44,13 +47,16 @@
         flex-shrink: 0;
     }
 
+    /* Bigger thumbnails */
     .gsc-thumbnail-inside img.gs-image {
-        width: 80px !important;
+        width: 150px !important;
         height: auto !important;
+        border-radius: 6px;
     }
 
+    /* Title styling */
     .gs-title {
-        font-size: 18px !important;
+        font-size: 20px !important;
         font-weight: bold !important;
     }
 </style>
@@ -62,6 +68,7 @@
 <div class="gcse-search"></div>
 
 <script>
+  // Open all results in a new tab
   document.addEventListener('click', function(e){
     if(e.target.tagName === 'A' && e.target.closest('.gsc-webResult')) {
       e.target.setAttribute('target', '_blank');
