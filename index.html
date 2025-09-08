@@ -28,7 +28,17 @@
 <h1>Amazon Organic</h1>
 
 <!-- Google CSE search box and results inline -->
-<div class="gcse-search" data-newwindow="true"></div>
+<div class="gcse-search"></div>
+
+<!-- Force all search result links to open in a new tab -->
+<script>
+  document.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && e.target.closest('.gsc-webResult')) {
+      e.target.setAttribute('target', '_blank');
+      e.target.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+</script>
 
 </body>
 </html>
